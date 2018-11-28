@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+
+<body>
+	<h1>Apklausos forma</h1>
+	<form method="post" action="duomenucentras.php">
+		<table>
+			<tr>
+				<td>Vardas</td>
+				<td><input type="text" name="name" required></td>
+			</tr>
+			<tr>
+				<td>Pavardė</td>
+				<td><input type="text" name="surname"></td>
+			</tr>
+			<tr>
+				<td>El. paštas</td>
+				<td><input type="email" name="email"></td>
+			</tr>
+			<tr>
+				<td>Amžius</td>
+				<td><input type="number" name="age"></td>
+			</tr>
+			<tr>
+				<td>Lytis</td>
+				<td>
+					V <input type="radio" name="gender" value="M">
+					M <input type="radio" name="gender" value="F">
+				</td>
+			</tr>
+
+			<tr>
+				<td>Iš kur atvykote?</td>
+				<td>
+					<select name="city">
+						<option value="1">Vilnius</option>
+						<option value="2">Kaunas</option>
+						<option value="3">Klaipėda</option>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<td>Kokia kalba programuojate?</td>
+				<td>
+					C# <input type="checkbox" name="planguage" value="csharp">
+					Java <input type="checkbox" name="planguage" value="java">
+					PHP <input type="checkbox" name="planguage" value="php">
+					JavaScript <input type="checkbox" name="planguage" value="javascript">
+				</td>
+			</tr>
+
+			<tr>
+				<td>Palikite komentarą</td>
+				<td>
+					<textarea name="comment"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="submit">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
