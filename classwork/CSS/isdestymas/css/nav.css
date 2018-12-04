@@ -1,0 +1,28 @@
+nav ul{
+	display: flex;
+	list-style: none;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+nav ul li{
+	padding: 10px;
+	color: black;
+}
+
+nav ul li:hover{
+	background-color: black;
+	color: white;
+}
+
+a:visited{
+	color: inherit;
+}
+
+nav ul li a{
+	text-decoration: none;
+	text-transform: uppercase;
+/*	color: inherit;*/
+	font-weight: bold;
+}
+
