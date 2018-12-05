@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+
+<body>
+	<script>
+
+									window.onload = function() {
+            soap();
+        };
+		        function soap() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open('POST', 'http://old.lb.lt/webservices/fxrates/FxRates.asmx?op=getFxRates', true);
+
+            // build SOAP request
+            var sr =
+                '<?xml version="1.0" encoding="utf-8"?>' +
+                		'<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">' +
+                    '<soap:Body>' +
+                    	'<getFxRates xmlns="http://www.lb.lt/WebServices/FxRates">' +
+
+                    		'</getFxRates>' +
+																					'</soap:Body>' +
+																				'</soap:Envelope>';
+
+
+
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4) {
+                    if (xmlhttp.status == 200) {
+																						console.log(xmlhttp.responseXML);
+                    }
+                }
+            }
+            // Send the POST requesttext/xml; charset=utf-8
+            xmlhttp.setRequestHeader('Content-Type', 'text/xml; charset=utf-8');
+            xmlhttp.send(sr);
+            // send request
+            // ...
+        }
+
+	</script>
+</body>
+</html>
