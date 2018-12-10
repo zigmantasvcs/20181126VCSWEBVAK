@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+
+<body>
+	<input type="color" id="spalva">
+	<input type="text" id="name">
+	<input type="button" id="mygtukas" value="OK" onclick="spausdinti()">
+
+	<script>
+
+		function spausdinti(){
+			var spalva = document.getElementById("spalva").value;
+			var name = document.getElementById("name").value;
+			document.write("<h1 style='color:"+spalva+"'>" + name + "</h1>");
+		}
+
+
+
+
+	</script>
+</body>
+</html>

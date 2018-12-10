@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+
+<body>
+	<script>
+		var x = prompt("Ivesk amziu", "");
+
+		if(x >= 18){
+					alert("Sveiki prisijunge");
+		}else{
+					// jeigu salygos rezultatas yra false
+				alert("Viso gero!");
+		}
+
+		var name = prompt("Iveskite varda", "");
+
+		if(name.length >= 15){
+			alert("Oooo! Koks ilgas vardas!");
+		}
+
+//		if(name == "Jonas"){
+//			alert("Sveikinu su vardadieniu!");
+//		}
+//		else if(name == "Petras"){
+//			alert("Sveikinu su vardadieniu!");
+//		}
+//		else if(name == "Andrius"){
+//			alert("Sveikinu su vardadieniu!");
+//		}
+
+//		if(name == "Jonas" || name == "Petras" || name == "Andrius"){
+//			alert("Sveikinu su vardadieniu!");
+//			if(name.length > 6){
+//				document.write("Sveiks Andriau");
+//			}
+//		}
+
+		switch(name){
+			case "Jonas":
+			case "Petras":
+			case "Andrius":
+					alert("Sveikinu su vardadieniu!");
+					break;
+			default:
+					alert("Nėra ką sveikinti!");
+		}
+
+	</script>
+</body>
+</html>
