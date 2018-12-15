@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style>
+		.container{
+			width: 500px;
+			height: 500px;
+			border: 1px solid black;
+		}
+
+		.ball{
+			position: relative;
+			width: 100px;
+			height: 100px;
+			background-color: purple;
+			border-radius: 50px;
+		}
+
+	</style>
+</head>
+
+<body>
+	X<input id="x" type="text">
+	Y<input id="y" type="text">
+	<div class="container">
+		<div class="ball"></div>
+
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+//		$(".container").mousemove(function(event){
+////			event.clientX
+////			event.clientY
+//			$("#x").val(event.clientX-8);
+//			$("#y").val(event.clientY-29);
+//		})
+
+		var leftPosition = 0;
+		var topPosition = 0;
+
+		$(document).keypress(function(event){
+			//alert(event.which);
+
+
+			if(event.which == 100 && (leftPosition < 400)){
+				leftPosition+=5;
+			}
+
+			if(event.which == 97){
+				leftPosition-=5;
+			}
+
+			if(event.which == 115){
+				topPosition+=5;
+			}
+
+			if(event.which == 119){
+				topPosition-=5;
+			}
+
+//			if(event.which == 103){
+//				window.scrollTo(0, topPosition);
+//			}
+
+			$(".ball").css("left", leftPosition);
+			$(".ball").css("top", topPosition);
+			$("#x").val(leftPosition+50);
+			$("#y").val(topPosition+50);
+			window.scrollTo(0, topPosition);
+		})
+
+	</script>
+</body>
+</html>

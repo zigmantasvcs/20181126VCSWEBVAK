@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+
+<body>
+	<script>
+		var shoppingItem1 = {
+			title: "Bananai",
+			price: 0.79,
+			currency: "EUR",
+			origin: "Marokas"
+		};
+
+		var shoppingItem2 = {
+			title: "Obuoliai",
+			price: 1.49,
+			currency: "EUR",
+			origin: "Lietuva"
+		};
+
+		var shoppingItem3 = {
+			title: "Duona",
+			price: 0.89,
+			currency: "EUR",
+			origin: "Lietuva"
+		};
+
+		var shoppingItem4 = {
+			title: "Batonas",
+			price: 1.11,
+			currency: "EUR",
+			origin: "Lietuva"
+		};
+		//JSON
+		var shoppingCart1 = [shoppingItem1, shoppingItem2, shoppingItem3, shoppingItem4];
+
+
+		document.write("<table>");
+
+		for(var i = 0;i<shoppingCart.length;i++){
+					document.write("<tr>");
+					document.write("<td>" + shoppingCart[i].title + "</td><td>" + shoppingCart[i].price + "</td><td>" + shoppingCart[i].currency+"</td>");
+					document.write("</tr>");
+		}
+
+//		document.write("<tr>");
+//		document.write("<td>" + shoppingItem1.title + "</td><td>" + shoppingItem1.price + "</td><td>" + shoppingItem1.currency+"</td>");
+//		document.write("</tr>");
+//
+//		document.write("<tr>");
+//		document.write("<td>" + shoppingItem2.title + "</td><td>" + shoppingItem2.price + "</td><td>" + shoppingItem2.currency+"</td>");
+//		document.write("</tr>");
+//
+//		document.write("<tr>");
+//		document.write("<td>" + shoppingItem3.title + "</td><td>" + shoppingItem3.price + "</td><td>" + shoppingItem3.currency+"</td>");
+//		document.write("</tr>");
+
+		document.write("</table>");
+
+	</script>
+</body>
+</html>

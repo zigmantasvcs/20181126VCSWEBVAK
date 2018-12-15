@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style>
+			.ball{
+			position: relative;
+			width: 100px;
+			height: 100px;
+			background-color: purple;
+			border-radius: 50px;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="ball"></div>
+	<div class="ball"></div>
+	<div class="ball"></div>
+	<div class="ball"></div>
+	<div class="ball"></div>
+	<div class="ball"></div>
+	<div class="ball"></div>
+	<div class="ball"></div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(".ball").click(function(){
+			$(this).animate({width: 500, height:500}, 1000);
+		})
+
+	</script>
+</body>
+</html>

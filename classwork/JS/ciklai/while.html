@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+
+<body>
+	<script>
+
+//		var x = 5;
+//		while(x == 5){
+//			console.log("test");
+//
+//			x += 10; // pirma karta ivykdzius eilute x bus 15
+//			console.log(x);
+//		}
+
+		var password = "";
+		var i = 0;
+		while(password != "qwerty123" && i < 3){
+			password = prompt("Iveskite slaptazodi", "");
+			//			i += 1; galimi variantai didinti 1
+			//			i = i + 1; galimi variantai didinti 1
+			i++;
+			alert(i + " bandymas");
+
+		}
+
+		if(i >= 3){
+			alert("Uzblokuotas forever");
+		}
+		else{
+			location.href = "http://www.vilniuscoding.lt";
+		}
+
+	</script>
+</body>
+</html>
