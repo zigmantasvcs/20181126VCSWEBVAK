@@ -11,6 +11,7 @@
 		}
 
 		.modal{
+			display: none;
 			position: fixed;
 			width: 100%;
 			height: 100vh;
@@ -40,16 +41,6 @@
 
 	<div class="modal">
 		<div class="box">
-			<img src="dog.jpg"> Do multos tempor philosophari. Illum fabulas iis incididunt a laboris est fugiat
-			tempor. Aute a commodo, eram iudicem in doctrina. Offendit dolore nostrud ex
-			culpa commodo iis tempor se hic dolor quis a voluptate ne eram cohaerescant
-			possumus varias tempor, mentitum aute aute eu eram, enim do singulis iis cillum,
-			vidisse ad velit singulis, quid cernantur concursionibus. Sed commodo o
-			incididunt se arbitror se voluptate, aut velit litteris despicationes si culpa
-			singulis cohaerescant ex o an anim fore quae, aute et deserunt si cillum, quae
-			nescius in incurreret, laborum qui quem. Ab deserunt despicationes. Proident ea
-			anim o tamen est expetendis id varias est in culpa quamquam, pariatur aut
-			consequat.
 		</div>
 	</div>
 
@@ -67,6 +58,7 @@
 		anim arbitror do officia varias admodum doctrina iis sed aute eram ita arbitror,
 		aut eiusmod in singulis ne summis ad ad quem officia qui doctrina est quid
 		ullamco a quorum familiaritatem occaecat quem quamquam.</p>
+	<img src="cat.jpg" class="small">
 		<p>Fore ut tempor o noster. De cernantur sempiternum ita quae te iudicem et sint,
 		est noster varias ne consequat ita nam aute ab tamen, id multos quibusdam
 		exercitation, quo laborum despicationes sed lorem tempor qui coniunctione a eram
@@ -106,7 +98,30 @@
 		anim arbitror do officia varias admodum doctrina iis sed aute eram ita arbitror,
 		aut eiusmod in singulis ne summis ad ad quem officia qui doctrina est quid
 		ullamco a quorum familiaritatem occaecat quem quamquam.</p>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$("img.small").click(function(){
+
+				var imagePath = $(this).prop("src");
+
+				var image = $("<img>").attr("src", imagePath);
+
+				$(".modal .box").prepend(image);
+
+				//$(".modal").css("display", "block");
+
+				$(".modal").fadeIn();
 
 
+			})
+
+			$(".modal").click(function(){
+				//$(this).css("display", "none");
+					$(".modal").fadeOut(function(){
+						$(this).children(".box").empty();
+					});
+			})
+
+		</script>
 </body>
 </html>

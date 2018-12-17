@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: purple;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="box"></div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script>
+
+		animateBoxForever();
+
+
+			function animateBoxForever(){
+
+					$(".box").animate({width: 500}, 2000, "linear", function(){
+					//alert("baigiau");
+					//location.href = "https://www.vilniuscoding.lt"
+						$(".box").css("background-color", "yellow");
+					});
+
+					$(".box").animate({width: 100}, 2000, function(){
+						$(".box").css("background-color", "red");
+					});
+
+					animateBoxForever();
+			}
+	</script>
+</body>
+</html>

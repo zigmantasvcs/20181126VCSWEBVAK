@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style>
+		.menu{
+			height: 50px;
+			width: 200px;
+			padding: 16px;
+			background-color: green;
+		}
+		.contextMenu{
+			display: none;
+			background-color: silver;
+			height: 0px;
+			padding: 16px;
+			width: 200px;
+		}
+
+		article{
+			opacity: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="menu">Meniu</div>
+		<div class="contextMenu">
+			<article>
+	<!--			<h1>Straipsnis 1</h1>-->
+				<p>Expetendis ut legam nescius et labore arbitror do esse duis eu de nisi noster
+					quid deserunt, fugiat cernantur ne iudicem, dolore laborum ab singulis do amet
+					sed proident, anim fidelissimae laborum dolor singulis de litteris dolor
+					voluptate. An quamquam domesticarum, ut si despicationes. Eu magna
+					comprehenderit, litteris e nulla nam veniam voluptate officia se iudicem ipsum
+					doctrina incurreret. Singulis multos legam appellat magna. Ubi aute dolor ex
+					voluptate. Illum admodum exercitation hic aute cupidatat sed cillum quae.
+					Commodo iis dolore o non o quid ingeniis o ad non relinqueret ad nostrud qui
+					velit.</p>
+			</article>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="menu">Meniu</div>
+		<div class="contextMenu">
+			<article>
+	<!--			<h1>Straipsnis 1</h1>-->
+				<p>Expetendis ut legam nescius et labore arbitror do esse duis eu de nisi noster
+					quid deserunt, fugiat cernantur ne iudicem, dolore laborum ab singulis do amet
+					sed proident, anim fidelissimae laborum dolor singulis de litteris dolor
+					voluptate. An quamquam domesticarum, ut si despicationes. Eu magna
+					comprehenderit, litteris e nulla nam veniam voluptate officia se iudicem ipsum
+					doctrina incurreret. Singulis multos legam appellat magna. Ubi aute dolor ex
+					voluptate. Illum admodum exercitation hic aute cupidatat sed cillum quae.
+					Commodo iis dolore o non o quid ingeniis o ad non relinqueret ad nostrud qui
+					velit.</p>
+			</article>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(".container").click(function(){
+
+			if($(this).children(".contextMenu").css("display") == "none"){
+
+				$(this).children(".contextMenu").css("display", "block");
+
+				$(this).children(".contextMenu").animate({height: 500}, function(){
+					$(this).children("article").animate({opacity: 1});
+				})
+
+			}
+			else{
+
+				$(this).children(".contextMenu article").animate({opacity: 0});
+
+				$(this).children(".contextMenu").animate({height: 0}, function(){
+					$(this).children(".contextMenu").css("display", "none");
+				})
+
+			}
+
+		})
+	</script>
+</body>
+</html>

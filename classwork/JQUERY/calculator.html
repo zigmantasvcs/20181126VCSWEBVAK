@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+
+<body>
+	<input type="text" id="result">
+	<input type="button" value="0" id="btn0">
+	<input type="button" value="1" id="btn1">
+	<input type="button" value="2" id="btn2">
+	<input type="button" value="3" id="btn3">
+	<input type="button" value="+" id="btnPlus">
+	<input type="button" value="-" id="btnMinus">
+	<input type="button" value="=" id="btnResult">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="functions.js"></script>
+	<script>
+		$("[id^=btn]").click(function(){
+
+			if($(this).val() == "="){
+				var rezulatas = eval($("#result").val());
+				$("#result").val(rezulatas);
+			}
+			else{
+				var priesTaiBuvusiReiksme = $("#result").val();
+
+				var galutineReiksme = priesTaiBuvusiReiksme + $(this).val();
+
+				$("#result").val(galutineReiksme);
+			}
+		})
+	</script>
+</body>
+</html>
