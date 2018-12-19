@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+
+		var parameter = {
+			dataType: "json",
+			url: "http://kitchenoffice.eu/service/items.php"
+		};
+
+		$.ajax(parameter).done(function(data){
+			console.log(data);
+
+			var table = $("<table>");
+
+			var headerRow = $("<tr>");
+
+			table.append(headerRow);
+
+			var th1 = $("<th>").text("Nr.");
+			headerRow.append(th1);
+
+			headerRow.append($("<th>").text("Vardas"));
+			headerRow.append($("<th>").text("Pavardė"));
+
+			for(var i = 0; i < data.length; i++){
+				var tr = $("<tr>");
+
+				table.append(tr);
+
+				var td1 = $("<td>");
+				//td1.text("<b>"+data.id+"</b>"); // text isvalo ir prideda
+				//td1.append(data.id); // append prideda prie galo
+				//td1.prepend(data.id); // prepend prideda i prieki
+				td1.html("<b>"+data[i].id+"</b>");
+
+				tr.append(td1);
+
+				var td2 = $("<td>");
+				td2.html("<b>"+data[i].name+"</b>");
+				tr.append(td2);
+
+				var td3 = $("<td>");
+				td3.html("<b>"+data[i].surname+"</b>");
+				tr.append(td3);
+			}
+
+
+
+			$("body").append(table);
+
+		});
+
+	</script>
+</body>
+</html>

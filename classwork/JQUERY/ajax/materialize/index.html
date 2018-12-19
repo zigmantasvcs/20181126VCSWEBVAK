@@ -74,86 +74,9 @@
 									nescius domesticarum ne aliquip. Esse mandaremus de pariatur. Se velit singulis
 									relinqueret. Aut amet iudicem exquisitaque.</p>
 
-									<div class="row">
-										<div class="col s12 m6 l4">
-											<div class="card">
-												<div class="card-image waves-effect waves-block waves-light">
-														<img class="activator" src="https://raw.githubusercontent.com/zigmantasvcs/resources/master/images/offers/bycycle.jpg">
-												</div>
-												<div class="card-content">
-														<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-														<p><a href="#">This is a link</a></p>
-												</div>
-												<div class="card-reveal">
-														<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-														<p>Here is some more information about this product that is only revealed once clicked on.</p>
-												</div>
-											</div>
-										</div>
+									<div class="row cards">
 
-										<div class="col s12 m6 l4">
-											<div class="card">
-												<div class="card-image waves-effect waves-block waves-light">
-														<img class="activator" src="images/old.jpg">
-												</div>
-												<div class="card-content">
-														<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-														<p><a href="#">This is a link</a></p>
-												</div>
-												<div class="card-reveal">
-														<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-														<p>Here is some more information about this product that is only revealed once clicked on.</p>
-												</div>
-											</div>
-										</div>
 
-										<div class="col s12 m6 l4">
-											<div class="card">
-												<div class="card-image waves-effect waves-block waves-light">
-														<img class="activator" src="images/old.jpg">
-												</div>
-												<div class="card-content">
-														<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-														<p><a href="#">This is a link</a></p>
-												</div>
-												<div class="card-reveal">
-														<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-														<p>Here is some more information about this product that is only revealed once clicked on.</p>
-												</div>
-											</div>
-										</div>
-
-										<div class="col s12 m6 l4">
-											<div class="card">
-												<div class="card-image waves-effect waves-block waves-light">
-														<img class="activator" src="images/old.jpg">
-												</div>
-												<div class="card-content">
-														<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-														<p><a href="#">This is a link</a></p>
-												</div>
-												<div class="card-reveal">
-														<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-														<p>Here is some more information about this product that is only revealed once clicked on.</p>
-												</div>
-											</div>
-										</div>
-
-										<div class="col s12 m6 l4">
-											<div class="card">
-												<div class="card-image waves-effect waves-block waves-light">
-														<img class="activator" src="images/old.jpg">
-												</div>
-												<div class="card-content">
-														<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-														<p><a href="#">This is a link</a></p>
-												</div>
-												<div class="card-reveal">
-														<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-														<p>Here is some more information about this product that is only revealed once clicked on.</p>
-												</div>
-											</div>
-										</div>
 									</div>
 
 
@@ -269,6 +192,67 @@
 									$('a[href="#items"]').click(function(event){
 												$('html, body').animate({scrollTop: $("#items").offset().top}, 'slow');
 									});
+
+									var parameter = {
+										dataType: "json",
+										url: "http://kitchenoffice.eu/service/offers.php"
+									};
+
+
+									$.ajax(parameter).done(function(data){
+										console.log(data);
+
+										drawCard(data[0]);
+										drawCard(data[1]);
+										drawCard(data[2]);
+									})
+
+
+							function drawCard(cardData){
+
+										var colDiv = $("<div>");
+										colDiv.addClass("col s12 m6 l4");
+										$(".cards").append(colDiv);
+
+										var cardDiv = $("<div>").addClass("card");
+										colDiv.append(cardDiv);
+
+										var cardImage = $("<div>").addClass("card-image waves-effect waves-block waves-light");
+										cardDiv.append(cardImage);
+
+										var image = $("<img>").addClass("activator").prop("src", cardData.image);
+										cardImage.append(image);
+
+
+										var cardContentDiv = $("<div>").addClass("card-content");
+										cardDiv.append(cardContentDiv);
+
+										var cardTitleSpan = $("<span>").addClass("card-title activator grey-text text-darken-4").append(cardData.title);
+
+										cardContentDiv.append(cardTitleSpan);
+
+										var moreVert = $("<i>").addClass("material-icons right").text("more_vert");
+
+										cardTitleSpan.append(moreVert);
+
+										var pLink = $("<p>");
+										cardContentDiv.append(pLink);
+
+										var aLink = $("<a>").attr("href", cardData.link).text("Nuoroda");
+
+										pLink.append(aLink);
+
+										var cardRevealDiv = $("<div>").addClass("card-reveal");
+
+										cardDiv.append(cardRevealDiv);
+
+										var cardRevealTitleSpan = $("<span>").addClass("card-title grey-text text-darken-4").text(cardData.title);
+										cardRevealDiv.append(cardRevealTitleSpan);
+
+										cardRevealTitleSpan.append("<i class=\"material-icons right\">close</i>");
+
+										cardRevealDiv.append("<p>"+cardData.description+"</p>");
+							}
 
 					</script>
     </body>
